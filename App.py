@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_carousel import carousel
 
 from preprocess import clean_text
 from predict import predict_sentiment
