@@ -33,11 +33,11 @@ def extract_entities(text):
         for word in delivery_words
     )
 
-    positive_words = [
-        "gostei",
-        "excelente",
-        "ótimo",
-        "perfeito"
+   positive_words = [
+        "eu gostei",
+        "é excelente",
+        "é ótimo",
+        "é perfeito"
     ]
 
     entities["liked_product"] = any(
