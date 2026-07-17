@@ -33,7 +33,7 @@ def extract_entities(text):
         for word in delivery_words
     )
 
-   positive_words = [
+    positive_words = [
         "eu gostei",
         "é excelente",
         "é ótimo",
