@@ -1,36 +1,19 @@
-def generate_response(sentiment, entities, product):
+def generate_response(sentiment, review_cliente, product):
 
-    name = entities.get("customer_name")
-    product = entities.get("product") if entities.get("product") else product
+gerador_respostas = pipeline("text-generation", model="google/gemma-4-E2B")
 
-    greeting = (
-        f"Olá {name}!\n\n"
-        if name
-        else "Olá!\n\n"
-    )
+# Criando o Prompt estruturado
+    prompt = f"""
+        Você é um assistente de atendimento ao cliente prestativo e educado.
+        A avaliação do cliente possui um sentimento {sentiment}.
+        Escreva uma resposta curta e profissional para a seguinte avaliação de um cliente:
+        "{review_cliente}"
+        Resposta:
+        """
 
-    response = greeting
+    resultado = gerador_respostas(prompt, max_new_tokens=150)
+        print(resultado[0]['generated_text'])
+        
 
-    if entities.get("liked_product"):
-        response += (
-            f"Ficamos felizes que você tenha gostado do {product}. "
-        )
-
-    if entities.get("delivery_issue"):
-        response += (
-            "Pedimos desculpas pela demora na entrega. "
-        )
-
-    if sentiment == "POSITIVE":
-        response += (
-            "É muito bom saber que sua experiência foi positiva. "
-        )
-    else:
-        response += (
-            "Lamentamos que sua experiência não tenha sido a ideal. "
-            "Nossa equipe está trabalhando para melhorar nossos serviços. "
-        )
-
-    response += "\n\nObrigado por compartilhar sua experiência."
-
-    return response
+    
+return resultado
