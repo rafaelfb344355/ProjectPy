@@ -1,6 +1,9 @@
-def generate_response(sentiment, review_cliente, product):
+from transformers import pipeline
 
 gerador_respostas = pipeline("text-generation", model="google/gemma-4-E2B")
+
+def generate_response(sentiment, review_cliente, product):
+
 
 # Criando o Prompt estruturado
     prompt = f"""
@@ -12,7 +15,7 @@ gerador_respostas = pipeline("text-generation", model="google/gemma-4-E2B")
         """
 
     resultado = gerador_respostas(prompt, max_new_tokens=150)
-        print(resultado[0]['generated_text'])
+        
         
 
     
