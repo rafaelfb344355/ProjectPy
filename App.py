@@ -160,7 +160,7 @@ if st.button(
 
     response = generate_response(
         result["label"],
-        review, produto["name"]
+        produto["name"]
     )
 
     st.divider()
