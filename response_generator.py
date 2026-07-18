@@ -10,8 +10,8 @@ def generate_response(sentiment, review_cliente, product):
           Escreva uma resposta curta e profissional para a seguinte avaliação de um cliente:
           "{review_cliente}"
           Resposta:
-          """
-     return resultado = gerador_respostas(prompt, max_new_tokens=150)
+              """
+          return resultado = gerador_respostas(prompt, max_new_tokens=150)
 
         
         
