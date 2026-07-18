@@ -159,7 +159,7 @@ if st.button(
     )
 
     response = generate_response(
-        result["label"],
+        result["label"],entities,
         produto["name"]
     )
 
