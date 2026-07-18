@@ -11,7 +11,8 @@ def generate_response(sentiment, review_cliente, product):
           "{review_cliente}"
           Resposta:
               """
-          return resultado = gerador_respostas(prompt, max_new_tokens=150)
+      resultado = gerador_respostas(prompt, max_new_tokens=150)
+      return resultado[0]['generated_text']) 
 
         
         
